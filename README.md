@@ -1,6 +1,18 @@
 # Gif
 Easy creation of GIFs with LuaU.
 
+# Example Code
+```lua
+  local Gif = require(script.Gif)
+
+  local NyanCatInstance = script.Parent:WaitForChild("NyanCat")
+  local NyanGif = Gif.new("Nyan Cat", 8):Start()
+
+  NyanGif:Connect(function(ImageID)
+    NyanCatInstance.Image = ImageID
+  end)
+```
+
 # Constructing Explanation
 ```lua
   local Gif = require(script.Gif) -- requiring the Gif module
@@ -61,16 +73,4 @@ Easy creation of GIFs with LuaU.
 
     In doing this, it will completely sweep all of its connections, including the .RenderStepped that handles the cycling.
   ]]
-```
-
-# Example Code
-```lua
-  local Gif = require(script.Gif)
-
-  local NyanCatInstance = script.Parent:WaitForChild("NyanCat")
-  local NyanGif = Gif.new("Nyan Cat", 8):Start()
-
-  NyanGif:Connect(function(ImageID)
-    NyanCatInstance.Image = ImageID
-  end)
 ```
