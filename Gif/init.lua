@@ -49,11 +49,11 @@ function gif:Start()
             if self.Tick + dt >= self.UpdateSpeed then
                 self.Tick = 0
 
-                self.Frame = math.clamp(
-                    self.Frame + 1,
-                    1,
-                    #self.FrameData
-                )
+                if self.Frame + 1 >= #self.FrameData then
+                    self.Frame = 1
+                else
+                    self.Frame = self.Frame + 1
+                end;
             else
                 self.Tick = self.Tick + dt
             end;
