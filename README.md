@@ -22,10 +22,9 @@ Easy creation of GIFs with LuaU.
     INTEGER (Frames Per Second)
   )
   
-  --[[
-    There are two ways to construct a gif. One way being: Creating a preset in the "GifPresets" module or pasting the data
-
-    -- Preset Example --
+  -- There are two ways to construct a gif. One way being: Creating a preset in the "GifPresets" module or pasting the data
+  
+  -- Preset Example --
     local MyGIF = Gif.new("Nyan Cat", 8)
 
     -- Table Example --
@@ -39,7 +38,6 @@ Easy creation of GIFs with LuaU.
         "rbxassetid://5311792289",
         "rbxassetid://5311792403"
    }, 8)
-  --]]
 ```
 
 # Handling Expanation
@@ -48,6 +46,7 @@ Easy creation of GIFs with LuaU.
 
   --[[
     Not really important, but I prefer doing method 1    
+  ]]
 
     -- Starting "Method" 1 --
     local MyGIF = Gif.new("Nyan Cat", 8):Start()
@@ -57,20 +56,19 @@ Easy creation of GIFs with LuaU.
 
     MyGIF:Start()
 
-    
-    Once you call :Start() on MyGIF it will start the cycling between images, except only in MyGIF's data.
-    To be able to update your ImageLabel/ImageButton (or other things that you could find this useful for) do:
-    
+     --[[
+      Once you call :Start() on MyGIF it will start the cycling between images, except only in MyGIF's data.
+      To be able to update your ImageLabel/ImageButton (or other things that you could find this useful for) do:
+    ]]
 
     MyGIF:Connect(function(ImageID)
       -- Image ID is the full "rbxassetid://NUMBER" id, every time the Frame updates, the function wrapped in :Connect() gets called
     end)
 
     
-    To stop MyGIF from running call:
+    -- To stop MyGIF from running call:
 
     MyGIF:Stop()
 
-    In doing this, it will completely sweep all of its connections, including the .RenderStepped that handles the cycling.
-  ]]
+    -- In doing this, it will completely sweep all of its connections, including the .RenderStepped that handles the cycling.
 ```
