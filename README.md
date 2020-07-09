@@ -56,7 +56,7 @@ Easy creation of GIFs with LuaU.
 
     MyGIF:Start()
 
-     --[[
+    --[[
       Once you call :Start() on MyGIF it will start the cycling between images, except only in MyGIF's data.
       To be able to update your ImageLabel/ImageButton (or other things that you could find this useful for) do:
     ]]
